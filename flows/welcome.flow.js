@@ -1,11 +1,16 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
-const vendedorFlow = require("./vendedor.flow");
+const cliente_actualFlow = require("./cliente_actual.flow");
+const cliente_nuevoFlow = require("./cliente_nuevo.flow");
+const polizasFlow = require("./polizas.flow");
+const asesorFlow = require("./asesor.flow");
+
 /**
  * Punto de Entrada!
  * NO Inteligente (no usa intelgencia artificial)
  * Flujo de bienvenida
  */
-module.exports =  addKeyword(['hola', 'ole', 'alo','buenas'])
+
+module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
 .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenido/a a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
 .addAnswer(
     [
@@ -20,12 +25,17 @@ module.exports =  addKeyword(['hola', 'ole', 'alo','buenas'])
         '',
         '¡Comencemos tu viaje de *Flik-Flak* juntos! ¿En qué puedo ayudarte hoy? 😊✨',
     ],
+    {capture: true}, async (ctx,{gotoFlow}) => {
 
-
-
-
-
-        null,
-        null,
-        [vendedorFlow]
-    )
+        const numero = ctx.body
+        console.log('consultando en base de datos si existe el numero registrado....')
+    
+        if(numero == '1'){
+            // Si existe lo enviamos al flujo de regostrados..
+            gotoFlow(cliente_actualFlow)
+        }else{
+            // Si NO existe lo enviamos al flujo de NO registrados..
+            gotoFlow(cliente_nuevoFlow)
+        }
+    
+    })

@@ -3,7 +3,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
  * Flujo de bienvenida
  */
-module.exports = addKeyword(['1']).addAnswer(
+module.exports = addKeyword('USUARIOS_REGISTRADOS').addAnswer(
     [
         '¡Bienvenido de nuevo, FlikFlaker! 🌟',
         'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio).',
@@ -19,7 +19,7 @@ module.exports = addKeyword(['1']).addAnswer(
             });
         }
         sede = ctx.body;
-        return  await flowSecundario;
+        // return  await flowSecundario;
                 // Puedes continuar con el flujo aquí según sea necesario.
         // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
     },
@@ -40,7 +40,7 @@ module.exports = addKeyword(['1']).addAnswer(
             });
         }
         sede = ctx.body;
-        return  await flowSecundario;
+        // return  await flowSecundario;
                 // Puedes continuar con el flujo aquí según sea necesario.
         // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
     },
