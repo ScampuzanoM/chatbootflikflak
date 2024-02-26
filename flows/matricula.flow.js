@@ -13,9 +13,20 @@ module.exports = addKeyword(['4']).addAnswer(
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
-        const msn = `Hola estoy ${myState.nombre} interesado en el proceso de matricula mi edad es ${myState.edad}`
-        const link = encodeURI(`https://wa.me/${TEL}?text=${msn}`);
-        await flowDynamic(`**Dar click en el siguiente link** ${link}`)
+        const mensaje = `Hola,
+        Estoy ${myState.nombre}
+        interesado en el proceso de matrícula.
+        Mi edad es ${myState.edad}.`;
+
+        // Codificar el mensaje para usarlo en el enlace de WhatsApp
+        const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
+
+        // Mensaje final que se enviará a través de tu flujo dinámico
+        const mensajeFinal = `**Haz clic en el siguiente enlace para contactarme por WhatsApp:**
+        ${enlaceWhatsApp}`;
+
+        // Enviar el mensaje utilizando tu función flowDynamic
+        await flowDynamic(mensajeFinal);
 
     }
     )
