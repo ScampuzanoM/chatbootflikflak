@@ -12,6 +12,7 @@ const welcomeFlow = require("./flows/welcome.flow");
 const ServerAPI = require('./http');
 const cliente_actualFlow = require('./flows/cliente_actual.flow');
 const cliente_nuevoFlow = require('./flows/cliente_nuevo.flow');
+const media_flow =  require('./flows/media.flow');
 /**
  * Configuracion de Plugin
  */
@@ -29,7 +30,8 @@ const main = async () => {
   const adapterFlow = createFlow([
     welcomeFlow,
     cliente_actualFlow,
-    cliente_nuevoFlow
+    cliente_nuevoFlow,
+    media_flow
   ]);
 
   const adapterProvider = createProvider(BaileysProvider);

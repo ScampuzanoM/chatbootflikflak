@@ -28,7 +28,7 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS').addAnswer(
     [
         '¡FlikFlaker! 🌟',
         'Eres Elite o entrenas una sola vez a la semana?',
-        'Responde Elite o amateur',
+        'Responde Elite o Regular',
     ],
     { capture: true},
 
