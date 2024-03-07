@@ -1,8 +1,8 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
-const programasFlow = require("./programas.flow");
-const clasepruebaFlow = require("./claseprueba.flow");
-const tarifasFlow = require("./tarifas.flow");
-const matriculaFlow = require("./matricula.flow");
+const programasFlow = require("./cliente_nuevo/programas.flow");
+const clasepruebaFlow = require("./cliente_nuevo/claseprueba.flow");
+const tarifasFlow = require("./cliente_nuevo/tarifas.flow");
+const matriculaFlow = require("./cliente_nuevo/matricula.flow");
 /**
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
  * Flujo de bienvenida

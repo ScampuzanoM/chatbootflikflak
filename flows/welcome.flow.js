@@ -3,6 +3,7 @@ const cliente_actualFlow = require("./cliente_actual.flow");
 const cliente_nuevoFlow = require("./cliente_nuevo.flow");
 const polizasFlow = require("./polizas.flow");
 const asesorFlow = require("./asesor.flow");
+const defaultFlow = require("./default.flow");
 
 /**
  * Punto de Entrada!
@@ -25,17 +26,29 @@ module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
         '',
         '¡Comencemos tu viaje de *Flik-Flak* juntos! ¿En qué puedo ayudarte hoy? 😊✨',
     ],
-    {capture: true}, async (ctx,{gotoFlow}) => {
+    {capture: true}, async (ctx,{flowDynamic, gotoFlow, fallBack}) => {
 
         const numero = ctx.body
-        console.log('consultando en base de datos si existe el numero registrado....')
-    
-        if(numero == '1'){
-            // Si existe lo enviamos al flujo de regostrados..
-            gotoFlow(cliente_actualFlow)
-        }else{
-            // Si NO existe lo enviamos al flujo de NO registrados..
-            gotoFlow(cliente_nuevoFlow)
-        }
-    
+        switch(numero) { 
+            case '1': { 
+                gotoFlow(cliente_actualFlow)
+               break; 
+            } 
+            case '2': { 
+                gotoFlow(cliente_nuevoFlow)
+                break; 
+            } 
+            case '3': { 
+                //statements; 
+                break; 
+            } 
+            case '0': { 
+                //statements; 
+                break; 
+            } 
+            default: { 
+                gotoFlow(defaultFlow)
+                return fallBack()
+            } 
+         } 
     })
