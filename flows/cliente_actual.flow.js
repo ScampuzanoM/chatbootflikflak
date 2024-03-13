@@ -1,6 +1,7 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const eliteFlow = require("./cliente_antiguo/elite.flow");
 const defaultFlow = require("./default.flow");
+const regularFlow = require("./cliente_antiguo/regular.flow");
 
 /**
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
@@ -8,7 +9,7 @@ const defaultFlow = require("./default.flow");
  */
 module.exports = addKeyword('USUARIOS_REGISTRADOS')
     .addAnswer(['¡Bienvenido de nuevo, FlikFlaker! 🌟',
-    'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio'
+    'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio)'
     ],
     { capture: true},
     async (ctx, { state }) => {
@@ -47,6 +48,6 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
     //         }        
     //  }
 },
-[eliteFlow]
+[eliteFlow, regularFlow]
 )
 
