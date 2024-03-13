@@ -9,7 +9,7 @@ const TEL = '+573508363260'
 
 module.exports = addKeyword(['1']).addAnswer(
     [
-        '¡Seras dirigido con un asesor personalizado que te ayudara con tu clase de repocisión! 🌟',
+        '¡Seras dirigido con un asesor personalizado que te ayudara con tu clase de reposición! 🌟',
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
