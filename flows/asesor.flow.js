@@ -5,7 +5,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  * Flujo de bienvenida
  */
 
-const TEL = '+573043760881'
+const TEL = '+573176827341'
 
 module.exports = addKeyword(['ASESOR_']).addAnswer(
     [
