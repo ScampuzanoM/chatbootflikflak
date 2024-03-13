@@ -1,7 +1,7 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
-const inscripcion_competenciasFlow = require("./elite/inscripcion_competencias.flow");
+
 const pagoFlow = require("./regular/pago.flow");
-const ReposicionFlow = require("./regular/Reposicion.flow");
+const ReposicionFlow = require("./regular/reposicion.flow");
 const incapacidadFlow = require("./regular/incapacidad.flow");
 const inscripcion_festivalFlow = require("./regular/inscripcion_festival.flow");
 const cambio_horarioFlow = require("./regular/cambio_horario.flow");
@@ -10,7 +10,7 @@ const cambio_horarioFlow = require("./regular/cambio_horario.flow");
  * Flujo de bienvenida
  */
 module.exports = addKeyword('2').addAnswer('Cual es tu nombre ? 🌟',
-{ capture: true},    
+{ capture: true},
         async (ctx, { state ,flowDinamics}) => {
             console.log(ctx);
             nombre = ctx.body;
