@@ -5,45 +5,9 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  */
 module.exports = addKeyword(['3']).addAnswer(
     [
-        '¡Bienvenido de nuevo, FlikFlaker! 🌟',
-        'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio).',
-        'En cualquier momento, si deseas contactar con un asesor, simplemente escribe *asesor* y serás redirigido automáticamente.',
-    ],
-    { capture: true},
+        '¡Conoce mas de nuestras politicas de polizas! 🌟',
+        'https://www.instagram.com/p/CyTMBzoOYdb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+    ]
+    ).addAnswer('Muchas gracias por comunicarse con nosotrso, si requiere algo mas escriba *Menu*')
 
-    async (ctx, { flowSecundario, endFlow }) => {
-        console.log(ctx);
-        if (ctx.body == '❌ Cancelar solicitud') {
-            return endFlow({
-                body: '❌ Su solicitud ha sido cancelada ❌'
-            });
-        }
-        sede = ctx.body;
-        return  await flowSecundario;
-                // Puedes continuar con el flujo aquí según sea necesario.
-        // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
-    },
-    []
-).addAnswer(
-    [
-        '¡FlikFlaker! 🌟',
-        'Eres Elite o entrenas una sola vez a la semana?',
-        'Responde Elite o amateur',
-    ],
-    { capture: true},
-
-    async (ctx, { flowSecundario, endFlow }) => {
-        console.log(ctx)
-        if (ctx.body == '❌ Cancelar solicitud') {
-            return endFlow({
-                body: '❌ Su solicitud ha sido cancelada ❌'
-            });
-        }
-        sede = ctx.body;
-        return  await flowSecundario;
-                // Puedes continuar con el flujo aquí según sea necesario.
-        // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
-    },
-    []
-)
 

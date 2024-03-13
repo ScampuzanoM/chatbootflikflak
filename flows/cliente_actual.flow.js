@@ -1,49 +1,52 @@
-const { addKeyword } = require("@bot-whatsapp/bot");
+const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
+const eliteFlow = require("./cliente_antiguo/elite.flow");
+const defaultFlow = require("./default.flow");
+
 /**
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
  * Flujo de bienvenida
  */
-module.exports = addKeyword('USUARIOS_REGISTRADOS').addAnswer(
-    [
-        '¡Bienvenido de nuevo, FlikFlaker! 🌟',
-        'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio).',
-        'En cualquier momento, si deseas contactar con un asesor, simplemente escribe *asesor* y serás redirigido automáticamente.',
+module.exports = addKeyword('USUARIOS_REGISTRADOS')
+    .addAnswer(['¡Bienvenido de nuevo, FlikFlaker! 🌟',
+    'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio'
     ],
     { capture: true},
-
-    async (ctx, { flowSecundario, endFlow }) => {
+    async (ctx, { state }) => {
         console.log(ctx);
-        if (ctx.body == '❌ Cancelar solicitud') {
-            return endFlow({
-                body: '❌ Su solicitud ha sido cancelada ❌'
-            });
-        }
         sede = ctx.body;
-        // return  await flowSecundario;
-                // Puedes continuar con el flujo aquí según sea necesario.
-        // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
-    },
-    []
-).addAnswer(
+        await state.update({ sede: ctx.body })
+        return null;
+    })
+    .addAnswer(
     [
         '¡FlikFlaker! 🌟',
-        'Eres Elite o entrenas una sola vez a la semana?',
-        'Responde Elite o Regular',
+        'Elje que tipo de usuario eres', 
+        '1.Elite',
+        '2.Regular'
     ],
     { capture: true},
 
-    async (ctx, { flowSecundario, endFlow }) => {
-        console.log(ctx)
-        if (ctx.body == '❌ Cancelar solicitud') {
-            return endFlow({
-                body: '❌ Su solicitud ha sido cancelada ❌'
-            });
-        }
-        sede = ctx.body;
-        // return  await flowSecundario;
-                // Puedes continuar con el flujo aquí según sea necesario.
-        // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
-    },
-    []
+    async (ctx, { state, gotoFlow }) => {
+        console.log(ctx);
+        
+        tipo_cliente = ctx.body;
+        await state.update({ tipo_cliente: ctx.body })
+  
+    //     switch(tipo_cliente) { 
+    //         case '1': { 
+    //            gotoFlow(eliteFlow)
+    //            break; 
+    //         } 
+    //         case '2': { 
+    //             // gotoFlow(eliteFlow)
+    //             break; 
+    //         }
+    //         default: { 
+    //             gotoFlow(defaultFlow)
+    //             return fallBack()
+    //         }        
+    //  }
+},
+[eliteFlow]
 )
 

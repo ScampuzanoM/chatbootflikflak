@@ -10,8 +10,7 @@ const matriculaFlow = require("./cliente_nuevo/matricula.flow");
 module.exports = addKeyword('USUARIOS_NO_REGISTRADOS').addAnswer(
     [
         '¡Bienvenido a FlikFlaker! 🌟',
-        'Dinos la edad del deportista por favor.',
-        'En cualquier momento, si deseas contactar con un asesor, simplemente escribe *asesor* y serás redirigido automáticamente.',
+        'Dinos la edad del deportista por favor.'
     ],
     { capture: true},
 

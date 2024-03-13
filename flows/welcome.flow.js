@@ -1,9 +1,9 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const cliente_actualFlow = require("./cliente_actual.flow");
 const cliente_nuevoFlow = require("./cliente_nuevo.flow");
-const polizasFlow = require("./polizas.flow");
 const asesorFlow = require("./asesor.flow");
 const defaultFlow = require("./default.flow");
+const polizasFlow = require("./polizas.flow")
 
 /**
  * Punto de Entrada!
@@ -11,7 +11,8 @@ const defaultFlow = require("./default.flow");
  * Flujo de bienvenida
  */
 
-module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
+// module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
+module.exports =  addKeyword('BOT')
 .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenido/a a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
 .addAnswer(
     [
@@ -26,7 +27,7 @@ module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
         '',
         '¡Comencemos tu viaje de *Flik-Flak* juntos! ¿En qué puedo ayudarte hoy? 😊✨',
     ],
-    {capture: true}, async (ctx,{flowDynamic, gotoFlow, fallBack}) => {
+    {capture: true}, async (ctx,{gotoFlow, fallBack}) => {
 
         const numero = ctx.body
         switch(numero) { 
@@ -39,11 +40,11 @@ module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
                 break; 
             } 
             case '3': { 
-                //statements; 
+                gotoFlow(polizasFlow)
                 break; 
             } 
             case '0': { 
-                //statements; 
+                gotoFlow(asesorFlow)
                 break; 
             } 
             default: { 
