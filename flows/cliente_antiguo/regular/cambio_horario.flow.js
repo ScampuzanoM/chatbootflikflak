@@ -7,7 +7,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 
 const TEL = '+573508363260'
 
-module.exports = addKeyword(['5']).addAnswer(
+module.exports = addKeyword(['2']).addAnswer(
     [
         '¡Seras dirigido con un asesor personalizado que te ayudara con tu cambio de horario! 🌟',
 

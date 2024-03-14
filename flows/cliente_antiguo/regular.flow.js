@@ -1,7 +1,7 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
 
 const pagoFlow = require("./regular/pago.flow");
-const ReposicionFlow = require("./regular/reposicion.flow");
+const reposicionFlow = require("./regular/reposicion.flow");
 const incapacidadFlow = require("./regular/incapacidad.flow");
 const inscripcion_festivalFlow = require("./regular/inscripcion_festival.flow");
 const cambio_horarioFlow = require("./regular/cambio_horario.flow");
@@ -21,14 +21,14 @@ module.exports = addKeyword('2').addAnswer('Cual es tu nombre ? 🌟',
         'Explora las emocionantes opciones que tenemos para ti. ¿Listo/a para sumergirte en el fascinante universo de la gimnasia artística? 🌍',
         '',
         '**Menú:**',
-        '1. 📋 Reposicion.',
-        '2. 📋 Pago.',
-        '3. 📋 Incapacidad.',
-        '4. 📋 Inscripción festival.',
-        '5. 📋 Cambio horario.',
+        '1. 📋 Reposición de clases.',
+        '2. 📋 Cambio horario.',
+        '3. 📋 Reportar Incapacidad.',
+        '4. 📋 Información Pagos.',
+        '5. 📋 Inscripción a inventos deportivos.',
         '',
         '¡Comencemos tu viaje de *Flik-Flak* juntos! ¿En qué puedo ayudarte hoy? 😊✨',
     ],null,null,
-    [pagoFlow, ReposicionFlow, incapacidadFlow, inscripcion_festivalFlow, cambio_horarioFlow]
+    [reposicionFlow, cambio_horarioFlow,incapacidadFlow, pagoFlow, inscripcion_festivalFlow]
 )
 

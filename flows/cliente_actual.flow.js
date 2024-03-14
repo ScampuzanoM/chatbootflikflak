@@ -9,7 +9,10 @@ const regularFlow = require("./cliente_antiguo/regular.flow");
  */
 module.exports = addKeyword('USUARIOS_REGISTRADOS')
     .addAnswer(['¡Bienvenido de nuevo, FlikFlaker! 🌟',
-    'Dinos a qué sede de Flik-Flak perteneces (Poblado, Palmas o Estadio)'
+    'Dinos a qué sede de Flik-Flak perteneces',
+    '🤸🏻‍♀️ Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot',
+    '🤸🏻‍♀️ Poblado: A una cuadra de la estación poblado del metro',
+    '🤸🏻‍♀️ Palmas: Parque la reserva. A 300m de Indiana Mall',
     ],
     { capture: true},
     async (ctx, { state }) => {
@@ -21,9 +24,9 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
     .addAnswer(
     [
         '¡FlikFlaker! 🌟',
-        'Elje que tipo de usuario eres', 
-        '1.Elite',
-        '2.Regular'
+        'Elije que tipo de deportista eres:', 
+        '1. Amateur',
+        '2. ÉLITE'
     ],
     { capture: true},
 

@@ -7,7 +7,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 
 const TEL = '+573508363260'
 
-module.exports = addKeyword(['4']).addAnswer(
+module.exports = addKeyword(['5']).addAnswer(
     [
         '¡Seras dirigido con un asesor personalizado que te ayudara con tu inscripcion al festival! 🌟',
 

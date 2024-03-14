@@ -45,7 +45,6 @@ module.exports = addKeyword('USUARIOS_NO_REGISTRADOS').addAnswer(
         '2. 📋 Clase Prueba: Reservar nuestra clase de prueba',
         '3. 📋 Tarifas: Conoce nuestras tarifas.',
         '4. 📋 Matriculas: Inicia nuestro proceso de matricula.',
-        '0. ☎️ Contactar un asesor.',
         '',
         '¡Comencemos tu viaje de *Flik-Flak* juntos! ¿En qué puedo ayudarte hoy? 😊✨',
     ],null,null,

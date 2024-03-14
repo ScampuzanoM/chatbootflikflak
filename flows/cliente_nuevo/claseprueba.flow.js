@@ -9,7 +9,26 @@ const TEL = '+573176827341'
 
 module.exports = addKeyword(['2']).addAnswer(
     [
-        '¡Seras dirigido con un asesor persolanizado que te ayudara con tu clase de prueba.! 🌟',
+        'Bienvenid@s 🥳🥳',
+        'Flikflakers, recuerda que en tu clase de prueba no solo podrás conocernos a nosotros, a nuestros profesores y la metodología de las clases; sino que también aprovecharemos para conocerte e identificar el nivel de fuerza, flexibilidad y destreza motriz. De esta manera, asignar un grupo adecuado para que tengas un mejor desarrollo y aprendizaje.',
+        'Después de la clase de prueba, se acordará el horario según el nivel. Tenemos clases de lunes a domingo.🤸🏻‍♂️🤸🏻‍♂️🤸🏻‍♂️',
+        '',
+        '📍 NUESTRAS SEDES',
+        '',
+        '🤸🏻‍♀️ Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot',
+        '🤸🏻‍♀️ Poblado: A una cuadra de la estación poblado del metro',
+        '🤸🏻‍♀️ Palmas: Parque la reserva. A 300m de Indiana Mall',
+        '',
+        'Las clases de prueba se realizan en la sede Poblado y Palmas 📍(duración 1 h):',
+        '',
+        'Inversión 💰💰💰',
+        'Sede Poblado $30.000',
+        'Sede Palmas $40.000',
+        '',
+        'NOTA:',
+        'Los menores de 3 años deben ingresar con acompañante a la clase.',
+        '' ,
+        'Para agendar la clase de prueba seras dirigido con un asesor personalizado que te ayudara! 🌟',
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
