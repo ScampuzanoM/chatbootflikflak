@@ -13,10 +13,7 @@ module.exports = addKeyword(['4']).addAnswer(
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
-        const mensaje = `Hola,
-        Estoy ${myState.nombre}
-        interesado en el proceso de matrícula.
-        Mi edad es ${myState.edad}.`;
+        const mensaje = `Hola estoy interesado en el proceso de matrícula, mi nombre es ${myState.nombre} y mi edad es ${myState.edad}.`;
 
         // Codificar el mensaje para usarlo en el enlace de WhatsApp
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
