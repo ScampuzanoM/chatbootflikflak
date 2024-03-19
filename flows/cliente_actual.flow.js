@@ -25,8 +25,8 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
     [
         '¡FlikFlaker! 🌟',
         'Elije que tipo de deportista eres:', 
-        '1. Amateur',
-        '2. ÉLITE'
+        '1. Amateur/Aficionado',
+        '2. Élite'
     ],
     { capture: true},
 
