@@ -12,8 +12,8 @@ const pqrs = require("./pqrs");
  * Flujo de bienvenida
  */
 
-// module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
-module.exports =  addKeyword('BOT')
+ module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
+//module.exports =  addKeyword('BOT')
 .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenid@ a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
 .addAnswer(
     [
