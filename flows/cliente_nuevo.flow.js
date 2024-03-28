@@ -9,45 +9,13 @@ const matriculaFlow = require("./cliente_nuevo/matricula.flow");
  */
 module.exports = addKeyword('USUARIOS_NO_REGISTRADOS').addAnswer(
     [
-        '¡Bienvenido a FlikFlaker! 🌟',
-        'Dinos la edad del deportista por favor.'
-    ],
-    { capture: true},
-
-    async (ctx, {state}) => {
-        console.log(ctx);
-        edad = ctx.body;
-        await state.update({ edad: ctx.body })
-        return null;
-        //return  await flowSecundario;
-                // Puedes continuar con el flujo aquí según sea necesario.
-        // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
-    }).addAnswer(
-        [
-            'Cual es tu nombre ? 🌟'
-        ],
-        { capture: true},
-    
-        async (ctx, {state}) => {
-            console.log(ctx);
-            nombre = ctx.body;
-            await state.update({ nombre: ctx.body })
-            return null;
-            //return  await flowSecundario;
-                    // Puedes continuar con el flujo aquí según sea necesario.
-            // Por ejemplo, puedes usar el valor capturado en ctx.body (sede) para personalizar más el flujo.
-        }).addAnswer(
-    [
-        'Explora las emocionantes opciones que tenemos para ti. ¿Listo/a para sumergirte en el fascinante universo de la gimnasia artística? 🌍',
+        '*Menu:*',
         '',
-        '**Menú:**',
-        '1. 📋 Programas: Consulta la informacion de nuestros programas.',
-        '2. 📋 Clase Prueba: Reservar nuestra clase de prueba',
-        '3. 📋 Tarifas: Conoce nuestras tarifas.',
-        '4. 📋 Matriculas: Inicia nuestro proceso de matricula.',
-        '',
-        '¡Comencemos tu viaje de *Flik-Flak* juntos! ¿En qué puedo ayudarte hoy? 😊✨',
+        '1. 📋 Clase Prueba: Reservar nuestra clase de prueba.',
+        '2. 📋 Tarifas: Conoce nuestras tarifas.',
+        '3. 📋 Matriculas: Inicia nuestro proceso de matricula.',
+        '4. 📋 Conócenos: Conócenos un poco mas.',
     ],null,null,
-    [programasFlow,clasepruebaFlow,tarifasFlow,matriculaFlow]
+    [clasepruebaFlow,tarifasFlow, matriculaFlow, programasFlow,]
 )
 

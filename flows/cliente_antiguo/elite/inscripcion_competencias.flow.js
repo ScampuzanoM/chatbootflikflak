@@ -7,9 +7,9 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 
 const TEL = '+573508363260'
 
-module.exports = addKeyword(['1']).addAnswer(
+module.exports = addKeyword(['si','sisas', 'ok', 'bueno']).addAnswer(
     [
-        '¡Seras dirigido con un asesor personalizado que te ayudara con la inscripcion a la competencia.! 🌟',
+        'Seras dirigido con un asesor personalizado que te ayudara con la inscripción a la competencia 🌟',
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
@@ -18,12 +18,14 @@ module.exports = addKeyword(['1']).addAnswer(
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
 
         // Mensaje final que se enviará a través de tu flujo dinámico
-        const mensajeFinal = `*Haz clic en el siguiente enlace para contactarme por WhatsApp:*${enlaceWhatsApp}`;
+        const mensajeFinal = `*Haz clic en el siguiente enlace:* 
+        ${enlaceWhatsApp}`;
 
         // Enviar el mensaje utilizando tu función flowDynamic
         await flowDynamic(mensajeFinal);
 
     }
     )
+    .addAnswer('¡Gracias por ser parte de nuestro mundo lleno de piruetas!')
 
 

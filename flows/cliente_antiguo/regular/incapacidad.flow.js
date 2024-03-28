@@ -18,8 +18,8 @@ module.exports = addKeyword(['3']).addAnswer(
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
 
         // Mensaje final que se enviará a través de tu flujo dinámico
-        const mensajeFinal = `*Haz clic en el siguiente enlace para contactarme por WhatsApp:*${enlaceWhatsApp}`;
-
+        const mensajeFinal = `*Haz clic en el siguiente enlace:* 
+        ${enlaceWhatsApp}`;
         // Enviar el mensaje utilizando tu función flowDynamic
         await flowDynamic(mensajeFinal);
 

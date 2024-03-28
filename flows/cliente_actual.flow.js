@@ -9,8 +9,8 @@ const regularFlow = require("./cliente_antiguo/regular.flow");
  */
 module.exports = addKeyword('USUARIOS_REGISTRADOS')
     .addAnswer(['¡Bienvenido de nuevo, FlikFlaker! 🌟',
-    'Dinos a qué sede de Flik-Flak perteneces',
-    '🤸🏻‍♀️ Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot',
+    'Dinos a qué sede de Flik-Flak perteneces', 
+    '🤸🏻‍♀️ Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot', //revisar
     '🤸🏻‍♀️ Poblado: A una cuadra de la estación poblado del metro',
     '🤸🏻‍♀️ Palmas: Parque la reserva. A 300m de Indiana Mall',
     ],
@@ -51,6 +51,6 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
     //         }        
     //  }
 },
-[eliteFlow, regularFlow]
+[regularFlow, eliteFlow]
 )
 

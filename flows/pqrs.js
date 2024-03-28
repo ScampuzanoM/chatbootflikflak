@@ -7,13 +7,15 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 
 const TEL = '+573508363260'
 
-module.exports = addKeyword(['5']).addAnswer(
+module.exports = addKeyword(['4'])
+.addAnswer(
     [
-        '¡Seras dirigido con un asesor personalizado que te ayudara con tu inscripcion al festival! 🌟',
+        '¡Seras dirigido con un asesor personalizado que te ayudara con la queja.! 🌟',
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
-        const mensaje = `Hola,  mi nombre es ${myState.nombre} y necesito inscribirme a un festival.`
+        const mensaje = `Hola,  necesito dejar una PQR's .`;
+
         // Codificar el mensaje para usarlo en el enlace de WhatsApp
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
 
