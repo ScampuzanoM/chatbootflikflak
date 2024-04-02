@@ -10,9 +10,9 @@ const regularFlow = require("./cliente_antiguo/regular.flow");
 module.exports = addKeyword('USUARIOS_REGISTRADOS')
     .addAnswer(['¡Bienvenido de nuevo, FlikFlaker! 🌟',
     'Dinos a qué sede de Flik-Flak perteneces', 
-    '🤸🏻‍♀️ Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot', //revisar
-    '🤸🏻‍♀️ Poblado: A una cuadra de la estación poblado del metro',
-    '🤸🏻‍♀️ Palmas: Parque la reserva. A 300m de Indiana Mall',
+    '1. Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot', 
+    '2. Poblado: A una cuadra de la estación poblado del metro',
+    '3. Palmas: Parque la reserva. A 300m de Indiana Mall',
     ],
     { capture: true},
     async (ctx, { state }) => {
@@ -35,21 +35,6 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
         
         tipo_cliente = ctx.body;
         await state.update({ tipo_cliente: ctx.body })
-  
-    //     switch(tipo_cliente) { 
-    //         case '1': { 
-    //            gotoFlow(eliteFlow)
-    //            break; 
-    //         } 
-    //         case '2': { 
-    //             // gotoFlow(eliteFlow)
-    //             break; 
-    //         }
-    //         default: { 
-    //             gotoFlow(defaultFlow)
-    //             return fallBack()
-    //         }        
-    //  }
 },
 [regularFlow, eliteFlow]
 )

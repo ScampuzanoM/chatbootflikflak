@@ -12,8 +12,9 @@ const pqrs = require("./pqrs");
  * Flujo de bienvenida
  */
 
- module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
-//module.exports =  addKeyword('BOT')
+
+//module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
+module.exports =  addKeyword('BOT')
 .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenid@ a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
 .addAnswer(
     [
@@ -21,6 +22,7 @@ const pqrs = require("./pqrs");
         '1. 🌐 Ya eres cliente.',
         '2. 👋 Nuevo FlikFlaker.',
         '3. 📋 Pólizas.',
+        '4. 📪 Quejas y reclamos '
         ,
     ],
     {capture: true}, async (ctx,{gotoFlow, fallBack}) => {
@@ -37,6 +39,10 @@ const pqrs = require("./pqrs");
             } 
             case '3': { 
                 gotoFlow(polizasFlow)
+                break; 
+            } 
+            case '4': { 
+                gotoFlow(pqrs)
                 break; 
             } 
             // case '0': { 

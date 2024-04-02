@@ -7,12 +7,9 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 
 const TEL = '+573508363260'
 
-module.exports = addKeyword(['4'])
-.addAnswer(
-    [
-        '¡Seras dirigido con un asesor personalizado que te ayudara con la queja.! 🌟',
-
-    ], null, async(ctx,{flowDynamic, state}) => {
+module.exports = addKeyword(['PQRS'])
+.addAnswer('¡Seras dirigido con un asesor personalizado que te ayudara con la queja.! 🌟', 
+    {capture: false}, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
         const mensaje = `Hola,  necesito dejar una PQR's .`;
 

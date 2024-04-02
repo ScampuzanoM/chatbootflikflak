@@ -9,7 +9,7 @@ const cambio_horarioFlow = require("./regular/cambio_horario.flow");
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
  * Flujo de bienvenida
  */
-module.exports = addKeyword('1').addAnswer('Cual es tu nombre ? 🌟',
+module.exports = addKeyword('1').addAnswer('¿Cual es tu Nombre Completo? 🌟',
 { capture: true},
         async (ctx, { state ,flowDinamics}) => {
             console.log(ctx);

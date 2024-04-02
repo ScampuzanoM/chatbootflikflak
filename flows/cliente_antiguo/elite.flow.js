@@ -6,7 +6,7 @@ const informacionFlow = require("./elite/informacion.flow");
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
  * Flujo de bienvenida
  */
-module.exports = addKeyword('2').addAnswer('Cual es tu nombre ? 🌟',
+module.exports = addKeyword('2').addAnswer('¿Cual es tu nombre completo? 🌟',
 { capture: true},    
         async (ctx, { state ,flowDinamics}) => {
             console.log(ctx);

@@ -1,0 +1,34 @@
+{
+    "sedes":[
+        {
+            "id": 1,
+            "sede":"poblado",
+            "roles":{
+                "numero_pagos": 3003278599,
+                "numero_competencias": 3503569858,
+                "numero_reposicion": 3508363260
+            }
+            
+        },
+        {
+            "id": 2,
+            "sede":"palmas",
+            "roles":{
+                "numero_pagos": 3003278599,
+                "numero_competencias": 3503569858,
+                "numero_reposicion": 3508363260
+            }
+            
+        },
+        {
+            "id": 3,
+            "sede":"estadio",
+            "roles":{
+                "numero_pagos": 3003278599,
+                "numero_competencias": 3503569858,
+                "numero_reposicion": 3508363260
+            }
+            
+        }
+    ]
+}
