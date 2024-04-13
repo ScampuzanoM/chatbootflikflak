@@ -14,6 +14,7 @@ const cliente_actualFlow = require('./flows/cliente_actual.flow');
 const cliente_nuevoFlow = require('./flows/cliente_nuevo.flow');
 const media_flow =  require('./flows/media.flow');
 const pqrs = require('./flows/pqrs');
+const fiestaCumpleaños = require('./flows/fiestaCumpleaños');
 /**
  * Configuracion de Plugin
  */
@@ -33,7 +34,8 @@ const main = async () => {
     cliente_actualFlow,
     cliente_nuevoFlow,
     pqrs,
-    media_flow
+    media_flow,
+    fiestaCumpleaños
   ]);
 
   const adapterProvider = createProvider(BaileysProvider);

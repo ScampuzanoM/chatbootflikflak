@@ -1,13 +1,15 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
+const defaultFlow = require("../default.flow");
 
 /**
  * FLujo Inteligente (va a ser activado por una intencion de una persona o por palabra clave)
  * Flujo de bienvenida
  */
 
-const TEL = '+573176827341'
+//const TEL = '+573176827341'
+const json = require("../../roles.json")
 
-module.exports = addKeyword(['3'])
+module.exports = addKeyword(['2'])
 .addAnswer('¿Cual es tu nombre ? ',{ capture: true},
     async (ctx, {state}) => {
         await state.update({ nombre: ctx.body })
@@ -24,15 +26,21 @@ async(ctx,{flowDynamic, state}) => {
     return null;
     })
 .addAnswer('¿En cual de nuestras sedes deseas matricularte')
-.addAnswer([
-        'Nuestras sedes:',
-        'Poblado: Lunes a Domingo',
-        'Palmas: Lunes a Sábado',
-        'Estadio: Lunes a Viernes'],
-        {capture: true}, 
-        async(ctx,{flowDynamic, state}) => {
-            await state.update({ sede: ctx.body })
-            return null;
+.addAnswer(['1. Poblado: A una cuadra de la estación poblado del metro',
+            '2. Palmas: Parque la reserva. A 300m de Indiana Mall',
+            '3. Estadio: Coliseo de gimnasia Jorge Hugo Giraldo. Unidad Atanasio Girardot'],
+{ capture: true},
+async (ctx, { state, gotoFlow, fallBack }) => {
+    id_sede = ctx.body;
+    if(id_sede != '1' && id_sede !='2' && id_sede != '3'){
+        await gotoFlow(defaultFlow)
+        return fallBack()
+    }else{
+        const SEDE = json.sedes.find((sede) => sede.id === Number(id_sede) );
+        const TEL = SEDE.roles.numero_matriculas
+        await state.update({ sede: ctx.body })
+        return null;
+    }
 })
 .addAnswer(
     [
@@ -41,6 +49,8 @@ async(ctx,{flowDynamic, state}) => {
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
         const mensaje = `Hola, mi nombre es ${myState.nombre} y estoy interesad@ en el proceso de matrícula para el deportista ${myState.nonmbreDeportista}, desea asistir ${myState.diasSemana} dias en la sede ${myState.sede}  `;
+        const SEDE = json.sedes.find((sede) => sede.id === Number(id_sede) );
+        const TEL = SEDE.roles.numero_matriculas
 
         // Codificar el mensaje para usarlo en el enlace de WhatsApp
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);

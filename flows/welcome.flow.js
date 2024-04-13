@@ -1,10 +1,10 @@
 const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 const cliente_actualFlow = require("./cliente_actual.flow");
 const cliente_nuevoFlow = require("./cliente_nuevo.flow");
-const asesorFlow = require("./asesor.flow");
 const defaultFlow = require("./default.flow");
 const polizasFlow = require("./polizas.flow");
 const pqrs = require("./pqrs");
+const fiestaCumpleaños = require("./fiestaCumpleaños")
 
 /**
  * Punto de Entrada!
@@ -13,19 +13,22 @@ const pqrs = require("./pqrs");
  */
 
 
-//module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu'])
-module.exports =  addKeyword('BOT')
+module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu','holi','hol'])
+// module.exports =  addKeyword('BOT')
 .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenid@ a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
 .addAnswer(
     [
         '*Menú:*',
+        '',
         '1. 🌐 Ya eres cliente.',
         '2. 👋 Nuevo FlikFlaker.',
         '3. 📋 Pólizas.',
-        '4. 📪 Quejas y reclamos '
+        '4. 📪 PQRS',
+        '5. 🎊 Agenda tu fiesta de cumpleaños.'
         ,
     ],
-    {capture: true}, async (ctx,{gotoFlow, fallBack}) => {
+    {capture: true}, 
+    async (ctx,{gotoFlow, fallBack}) => {
 
         const numero = ctx.body
         switch(numero) { 
@@ -45,13 +48,14 @@ module.exports =  addKeyword('BOT')
                 gotoFlow(pqrs)
                 break; 
             } 
-            // case '0': { 
-            //     gotoFlow(asesorFlow)
-            //     break; 
-            // } 
+            case '5': { 
+                gotoFlow(fiestaCumpleaños)
+                break; 
+            } 
             default: { 
-                gotoFlow(defaultFlow)
+                await gotoFlow(defaultFlow)
                 return fallBack()
             } 
          } 
-    })
+    }
+)

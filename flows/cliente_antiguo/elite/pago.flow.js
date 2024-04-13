@@ -1,4 +1,5 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
+const defaultFlow = require("../../default.flow");
 
 
 /**
@@ -29,16 +30,14 @@ module.exports = addKeyword(['1'])
     { capture: true }, 
     async(ctx, {flowDynamic, state}) => {
         opcion = ctx.body
+        const myState = state.getMyState();
+        const SEDE = json.sedes.find((sede) => sede.id === Number(myState.sede) );
+        const TEL = SEDE.roles.numero_pagos;
         switch(opcion) { 
             case '1': { 
-                const myState = state.getMyState();
-                const mensaje = `Hola, mi nombre es ${myState.nombre} y necesito ayuda con mi pago` ;
-                const SEDE = json.sedes.find((sede) => sede.id === Number(myState.sede) );
-                const TEL = SEDE.roles.numero_pagos;
-
+                const mensaje = `Hola, mi nombre es ${myState.nombre} y necesito ayuda con el pago para el deportista ${myState.nonmbreDeportista}` ;
                 // Codificar el mensaje para usarlo en el enlace de WhatsApp
                 const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
-        
                 // Mensaje final que se enviará a través de tu flujo dinámico
                 const mensajeFinal = `*Haz clic en el siguiente enlace:* 
                 ${enlaceWhatsApp}`;
@@ -47,14 +46,9 @@ module.exports = addKeyword(['1'])
                break; 
             } 
             case '2': { 
-                const myState = state.getMyState();
                 const mensaje = `Hola, mi nombre es ${myState.nombre} y a continuacion adjunto el comprobante de pago` ;
-                const SEDE = json.sedes.find((sede) => sede.id === Number(myState.sede) );
-                const TEL = SEDE.roles.numero_pagos;
-                
                 // Codificar el mensaje para usarlo en el enlace de WhatsApp
                 const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
-
                 // Mensaje final que se enviará a través de tu flujo dinámico
                 const mensajeFinal = `*Haz clic en el siguiente enlace:* 
                 ${enlaceWhatsApp}`;

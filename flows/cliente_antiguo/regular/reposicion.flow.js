@@ -5,7 +5,8 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  * Flujo de bienvenida
  */
 
-const TEL = '+573508363260'
+//const TEL = '+573508363260'
+const json = require("../../../roles.json")
 
 module.exports = addKeyword(['1']).addAnswer(
     [
@@ -13,7 +14,9 @@ module.exports = addKeyword(['1']).addAnswer(
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
-        const mensaje = `Hola,  mi nombre es ${myState.nombre} y necesito reponer una clase.`
+        const mensaje = `Hola,  mi nombre es ${myState.nombre} y necesito reponer una clase para el deportista ${myState.nonmbreDeportista}`
+        const SEDE = json.sedes.find((sede) => sede.id === Number(myState.sede) );
+        const TEL = SEDE.roles.numero_reposicion;
         // Codificar el mensaje para usarlo en el enlace de WhatsApp
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
 

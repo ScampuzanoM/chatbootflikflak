@@ -5,7 +5,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  * Flujo de bienvenida
  */
 
-const TEL = '+573508363260'
+const TEL = '573016453429'
 
 module.exports = addKeyword(['PQRS'])
 .addAnswer('¡Seras dirigido con un asesor personalizado que te ayudara con la queja.! 🌟', 
