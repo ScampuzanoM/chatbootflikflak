@@ -5,7 +5,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
  * Flujo de bienvenida
  */
 
-const TEL = '573016453429'
+const TEL = '573134518987'
 
 module.exports = addKeyword(['fiestaCumpleaños'])
 .addAnswer('¡Conocenos un poco mas sobre nuestras reservas de cumpleaños!',{media: 'https://firebasestorage.googleapis.com/v0/b/flikflka.appspot.com/o/elite-pagos%2Fcumple.jpeg?alt=media&token=19184f81-0659-487c-ac23-7f001ca3b1af'})
