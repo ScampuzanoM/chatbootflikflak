@@ -8,11 +8,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 const TEL = '573016453429'
 
 module.exports = addKeyword(['fiestaCumpleaños'])
-.addAnswer(
-    [
-        '¡Conocenos un poco mas sobre nuestras reservas de cumpleaños! 🌟'
-    ]
-)
+.addAnswer('¡Conocenos un poco mas sobre nuestras reservas de cumpleaños!',{media: 'https://firebasestorage.googleapis.com/v0/b/flikflka.appspot.com/o/elite-pagos%2Fcumple.jpeg?alt=media&token=19184f81-0659-487c-ac23-7f001ca3b1af'})
 .addAnswer('Cuentanos la edad de el/la cumpleañer@',{ capture: true},
     async (ctx, {state}) => {
         await state.update({ edad_cumpleañero: ctx.body })

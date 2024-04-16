@@ -13,7 +13,7 @@ const fiestaCumpleaños = require("./fiestaCumpleaños")
  */
 
 
-module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu','holi','hol'])
+module.exports =  addKeyword(['hola', 'ole', 'alo','buenas','menu','holi','hol', 'oe'])
 // module.exports =  addKeyword('BOT')
 .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenid@ a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
 .addAnswer(
