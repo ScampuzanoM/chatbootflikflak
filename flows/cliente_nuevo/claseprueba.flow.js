@@ -50,7 +50,7 @@ module.exports = addKeyword(['1'])
 //      'Viernes 2 a 3 años 3:00pm ' ,
 //      'Viernes 6 - 10 años 5:00pm',''])
 // .addAnswer('Por favor, nos confirma si deseas asistir a la clase de prueba para que podamos reservar su lugar y brindarles la mejor experiencia posible.')
-.addAnswer(['¡Conocenos un poco mas! 🌟','https://www.instagram.com/reel/C5msLL2RGjO/?igsh=Z3dlMDByeXdkaGZj'])
+.addAnswer(['¡Conoce un poco mas! 🌟','https://www.instagram.com/reel/C5v9jrmR0E4/?igsh=a3R6bzhqY3I5YjMx'])
 .addAnswer(
     [
         '*¿En cual de nuestras clases de prueba estas interesad@?*',

@@ -2,7 +2,7 @@
     "sedes":[
         {
             "id": 1,
-            "sede":"poblado",
+            "sede":"Poblado",
             "roles":{
                 "numero_pagos": 573003278599, 
                 "numero_competencias": 573016453429, 
@@ -18,7 +18,7 @@
         },
         {
             "id": 2,
-            "sede":"palmas",
+            "sede":"Palmas",
             "roles":{
                 "numero_pagos": 573003278599, 
                 "numero_competencias": 573016453429, 
@@ -34,7 +34,7 @@
         },
         {
             "id": 3,
-            "sede":"estadio",
+            "sede":"Estadio",
             "roles":{
                 "numero_pagos": 573003278599, 
                 "numero_competencias": 573016453429, 

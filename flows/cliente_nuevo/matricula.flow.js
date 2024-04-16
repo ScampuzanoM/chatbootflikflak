@@ -48,9 +48,11 @@ async (ctx, { state, gotoFlow, fallBack }) => {
 
     ], null, async(ctx,{flowDynamic, state}) => {
         const myState = state.getMyState();
-        const mensaje = `Hola, mi nombre es ${myState.nombre} y estoy interesad@ en el proceso de matrícula para el deportista ${myState.nonmbreDeportista}, desea asistir ${myState.diasSemana} dias en la sede ${myState.sede}  `;
         const SEDE = json.sedes.find((sede) => sede.id === Number(id_sede) );
         const TEL = SEDE.roles.numero_matriculas
+        const SEDE_DESC = SEDE.sede
+
+        const mensaje = `Hola, mi nombre es ${myState.nombre} y estoy interesad@ en el proceso de matrícula para el deportista ${myState.nonmbreDeportista}, desea asistir ${myState.diasSemana} dias en la sede ${SEDE_DESC}  `;
 
         // Codificar el mensaje para usarlo en el enlace de WhatsApp
         const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);
