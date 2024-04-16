@@ -10,8 +10,7 @@ const TEL = '573016453429'
 module.exports = addKeyword(['fiestaCumpleaños'])
 .addAnswer(
     [
-        '¡Conocenos un poco mas sobre nuestras reservas de cumpleaños! 🌟',
-        'https://www.instagram.com/reel/C5msLL2RGjO/?igsh=Z3dlMDByeXdkaGZj'
+        '¡Conocenos un poco mas sobre nuestras reservas de cumpleaños! 🌟'
     ]
 )
 .addAnswer('Cuentanos la edad de el/la cumpleañer@',{ capture: true},
