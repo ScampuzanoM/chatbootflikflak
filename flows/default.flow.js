@@ -6,7 +6,7 @@ const welcomeFlow = require("./welcome.flow");
  */
 module.exports = addKeyword('DEFAULT').addAnswer(
     [
-        '¡Upss, Creo que ingresaste una opcion no valida! 🌟'
+        '¡por favor ingresa una opcion valida! 🌟'
     ]
 )
 
