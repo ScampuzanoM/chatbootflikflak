@@ -2,7 +2,7 @@
 const { addKeyword } = require("@bot-whatsapp/bot");
 const { EVENTS } = require('@bot-whatsapp/bot')
 
-const TEL = '573176827341'
+const TEL = '573003278599'
 const mensaje = `Envio Soporte de Pago`;
 const enlaceWhatsApp = encodeURI(`https://web.whatsapp.com/send?phone=${TEL}&text=${mensaje}`);
 module.exports =  addKeyword(EVENTS.MEDIA)
