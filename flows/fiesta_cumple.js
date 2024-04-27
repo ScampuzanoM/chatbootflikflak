@@ -50,7 +50,7 @@ module.exports = addKeyword(['fiestaCumpleaños'])
     .addAnswer('¡Seras dirigido con un asesor personalizado que te ayudara con la reserva.! 🌟',
         { capture: false }, async (ctx, { flowDynamic, state }) => {
             const myState = state.getMyState();
-            const mensaje = `Hola,  necesito hacer una reserva para una fiesta de cumpleaños ${myState.sede_cumpleaños} para el cumpleañero ${myState.nombre_cumpleañero} `;
+            const mensaje = `Hola, necesito hacer una reserva para una fiesta de cumpleaños ${myState.sede_cumpleaños} para el cumpleañero ${myState.nombre_cumpleañero} que va a cumplir ${myState.edad_cumpleañero}`;
 
             // Codificar el mensaje para usarlo en el enlace de WhatsApp
             const enlaceWhatsApp = encodeURI(`https://wa.me/${TEL}?text=${mensaje}`);

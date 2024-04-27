@@ -4,8 +4,10 @@ const cliente_nuevoFlow = require("./cliente_nuevo.flow");
 const defaultFlow = require("./default.flow");
 const polizasFlow = require("./polizas.flow");
 const pqrs = require("./pqrs");
-const fiestaCumpleaños = require("./fiestaCumpleaños")
-const inactividad = require("./inactividad.flow")
+const fiestaCumpleFlow = require("./fiesta_cumple")
+const inactividad = require("./inactividad.flow");
+const mediaFlow = require("./media.flow");
+
 
 /**
  * Punto de Entrada!
@@ -13,7 +15,7 @@ const inactividad = require("./inactividad.flow")
  * Flujo de bienvenida
  */
 
-module.exports = addKeyword(['hola', 'ole', 'alo', 'buenas', 'menu', 'holi', 'hol', 'oe'])
+module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'holi', 'hol', 'oe'])
     // module.exports =  addKeyword('BOT')
     .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenid@ a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
     .addAnswer(
@@ -33,8 +35,8 @@ module.exports = addKeyword(['hola', 'ole', 'alo', 'buenas', 'menu', 'holi', 'ho
             if (ctx?.idleFallBack) {
                 return gotoFlow(inactividad)
             } else {
-                const numero = ctx.body
-                switch (numero) {
+                const opcion = ctx.body.substring(1,12)
+                switch (opcion) {
                     case '1': {
                         gotoFlow(cliente_actualFlow)
                         break;
@@ -52,7 +54,11 @@ module.exports = addKeyword(['hola', 'ole', 'alo', 'buenas', 'menu', 'holi', 'ho
                         break;
                     }
                     case '5': {
-                        gotoFlow(fiestaCumpleaños)
+                        gotoFlow(fiestaCumpleFlow)
+                        break;
+                    }
+                    case 'event_media': {
+                        gotoFlow(mediaFlow)
                         break;
                     }
                     default: {

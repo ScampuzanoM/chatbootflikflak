@@ -14,7 +14,7 @@ const cliente_actualFlow = require('./flows/cliente_actual.flow');
 const cliente_nuevoFlow = require('./flows/cliente_nuevo.flow');
 const media_flow =  require('./flows/media.flow');
 const pqrs = require('./flows/pqrs');
-const fiestaCumpleaños = require('./flows/fiestaCumpleaños');
+const fiestaCumpleaños = require('./flows/fiesta_cumple');
 /**
  * Configuracion de Plugin
  */
