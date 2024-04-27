@@ -35,7 +35,7 @@ module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'ho
             if (ctx?.idleFallBack) {
                 return gotoFlow(inactividad)
             } else {
-                const opcion = ctx.body.substring(1,12)
+                const opcion = ctx.body.substring(0,12)
                 switch (opcion) {
                     case '1': {
                         gotoFlow(cliente_actualFlow)
@@ -57,7 +57,7 @@ module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'ho
                         gotoFlow(fiestaCumpleFlow)
                         break;
                     }
-                    case 'event_media': {
+                    case '_event_media': {
                         gotoFlow(mediaFlow)
                         break;
                     }
