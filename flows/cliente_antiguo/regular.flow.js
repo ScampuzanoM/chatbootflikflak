@@ -46,8 +46,8 @@ module.exports = addKeyword('1')
             } else {
                 const numero = ctx.body
                 if (numero != '1' && numero != '2' && numero != '3' && numero != '4' && numero != '5') {
-                    await gotoFlow(defaultFlow)
-                    return fallBack()
+                    //await gotoFlow(defaultFlow)
+                    return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                 }
             }
         },

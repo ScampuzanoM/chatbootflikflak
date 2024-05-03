@@ -25,7 +25,7 @@ module.exports = addKeyword(['4']).addAnswer(
         const mensajeFinal = `*Haz clic en el siguiente enlace:* 
         ${enlaceWhatsApp}`;
         // Enviar el mensaje utilizando tu función flowDynamic
-        await flowDynamic(mensajeFinal);
+        return flowDynamic(mensajeFinal);
 
     }
     )

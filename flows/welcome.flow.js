@@ -38,32 +38,25 @@ module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'ho
                 const opcion = ctx.body.substring(0,12)
                 switch (opcion) {
                     case '1': {
-                        gotoFlow(cliente_actualFlow)
-                        break;
+                        return gotoFlow(cliente_actualFlow)
                     }
                     case '2': {
-                        gotoFlow(cliente_nuevoFlow)
-                        break;
+                        return gotoFlow(cliente_nuevoFlow)
                     }
                     case '3': {
-                        gotoFlow(polizasFlow)
-                        break;
+                        return gotoFlow(polizasFlow)
                     }
                     case '4': {
-                        gotoFlow(pqrs)
-                        break;
+                        return gotoFlow(pqrs)
                     }
                     case '5': {
-                        gotoFlow(fiestaCumpleFlow)
-                        break;
+                        return gotoFlow(fiestaCumpleFlow)
                     }
                     case '_event_media': {
-                        gotoFlow(mediaFlow)
-                        break;
+                        return gotoFlow(mediaFlow)
                     }
                     default: {
-                        await gotoFlow(defaultFlow)
-                        return fallBack()
+                        return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                     }
                 }
             }

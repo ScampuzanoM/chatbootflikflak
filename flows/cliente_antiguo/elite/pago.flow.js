@@ -45,8 +45,7 @@ module.exports = addKeyword(['1'])
                         const mensajeFinal = `*Haz clic en el siguiente enlace:* 
                     ${enlaceWhatsApp}`;
                         // Enviar el mensaje utilizando tu función flowDynamic
-                        await flowDynamic(mensajeFinal);
-                        break;
+                        return flowDynamic(mensajeFinal);
                     }
                     case '2': {
                         const mensaje = `Hola, mi nombre es ${myState.nombre} y a continuacion adjunto el comprobante de pago`;
@@ -56,12 +55,11 @@ module.exports = addKeyword(['1'])
                         const mensajeFinal = `*Haz clic en el siguiente enlace:* 
                     ${enlaceWhatsApp}`;
                         // Enviar el mensaje utilizando tu función flowDynamic
-                        await flowDynamic(mensajeFinal);
-                        break;
+                        return flowDynamic(mensajeFinal);
                     }
                     default: {
-                        gotoFlow(defaultFlow)
-                        return fallBack()
+                        //gotoFlow(defaultFlow)
+                        return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                     }
                 }
             }

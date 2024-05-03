@@ -42,8 +42,8 @@ module.exports = addKeyword(['fiestaCumpleaños'])
                         await state.update({ sede_cumpleaños: 'en casa' })
                         break;
                     default:
-                        await gotoFlow(defaultFlow)
-                        return fallBack()
+                        //await gotoFlow(defaultFlow)
+                        return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                 }
             }
         })
@@ -59,7 +59,7 @@ module.exports = addKeyword(['fiestaCumpleaños'])
             const mensajeFinal = `*Haz clic en el siguiente enlace:* 
         ${enlaceWhatsApp}`;
             // Enviar el mensaje utilizando tu función flowDynamic
-            await flowDynamic(mensajeFinal);
+            return flowDynamic(mensajeFinal);
 
         }
     )

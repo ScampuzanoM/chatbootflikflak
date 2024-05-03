@@ -49,8 +49,8 @@ module.exports = addKeyword(['2'])
             } else {
                 id_sede = ctx.body;
                 if (id_sede != '1' && id_sede != '2' && id_sede != '3') {
-                    await gotoFlow(defaultFlow)
-                    return fallBack()
+                    //await gotoFlow(defaultFlow)
+                    return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                 } else {
                     const SEDE = json.sedes.find((sede) => sede.id === Number(id_sede));
                     const TEL = SEDE.roles.numero_matriculas
@@ -79,7 +79,7 @@ module.exports = addKeyword(['2'])
         ${enlaceWhatsApp}`;
 
             // Enviar el mensaje utilizando tu función flowDynamic
-            await flowDynamic(mensajeFinal);
+            return flowDynamic(mensajeFinal);
 
         }
     )

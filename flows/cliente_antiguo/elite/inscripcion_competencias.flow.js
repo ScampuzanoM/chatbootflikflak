@@ -26,7 +26,7 @@ module.exports = addKeyword(['si','sisas', 'ok', 'bueno']).addAnswer(
         ${enlaceWhatsApp}`;
 
         // Enviar el mensaje utilizando tu función flowDynamic
-        await flowDynamic(mensajeFinal);
+        return flowDynamic(mensajeFinal);
 
     }
     )

@@ -24,8 +24,8 @@ module.exports = addKeyword('USUARIOS_NO_REGISTRADOS').addAnswer(
         } else {
             const numero = ctx.body
             if (numero != '1' && numero != '2' && numero != '3') {
-                await gotoFlow(defaultFlow)
-                return fallBack()
+                //await gotoFlow(defaultFlow)
+                return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
             }
         }
     },

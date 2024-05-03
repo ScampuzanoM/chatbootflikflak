@@ -50,23 +50,6 @@ module.exports = addKeyword(['1'])
     .addAnswer(['*¿Para que la clase de prueba?*', ''])
     .addAnswer(['Flikflakers, recuerda que en tu clase de prueba no solo podrás conocernos a nosotros, a nuestros profesores y la metodología de las clases; sino que también aprovecharemos para conocerte e identificar el nivel de fuerza, flexibilidad y destreza motriz. De esta manera, asignar un grupo adecuado para que tengas un mejor desarrollo y aprendizaje.', ''])
     .addAnswer(['Después de la clase de prueba, se acordará el horario según el nivel. Tenemos clases de lunes a domingo. 🤸🏻‍♂️🤸🏻‍♂️🤸🏻‍♂️', ''])
-    // .addAnswer(['¡Recuerda que puedes realizar el pago por transferencia o en efectivo en nuestra sede! ¡Elige la opción que más te convenga! 🏦💵',''])
-    // .addAnswer('*HORARIOS CLASE DE PRUEBA*')
-    // .addAnswer(
-    //     ['*POBLADO*',
-    //      'Lunes 2 -3 AÑOS 2:00pm',
-    //      'Lunes 6-10 AÑOS 4:00pm',
-    //      'Martes 3 - 4 AÑOS 2:00pm',
-    //      'Sabado 6-10 AÑOS 12:00m' ,
-    //      'Sabado 12-16 AÑOS 12:00pm'])
-    // .addAnswer(
-    //     ['*PALMAS*',
-    //      'Martes 6 - 10 AÑOS 5:00pm',
-    //      'Miércoles 1 -2 años 3:00pm',
-    //      'Jueves 3-4 aÑOS 3:00pm',
-    //      'Viernes 2 a 3 años 3:00pm ' ,
-    //      'Viernes 6 - 10 años 5:00pm',''])
-    // .addAnswer('Por favor, nos confirma si deseas asistir a la clase de prueba para que podamos reservar su lugar y brindarles la mejor experiencia posible.')
     .addAnswer(['¡Conoce un poco mas! 🌟', 'https://www.instagram.com/reel/C5v9jrmR0E4/?igsh=a3R6bzhqY3I5YjMx'])
     .addAnswer(
         [
@@ -123,8 +106,8 @@ module.exports = addKeyword(['1'])
                         break;
                     }
                     default: {
-                        await gotoFlow(defaultFlow)
-                        return fallBack()
+                        //await gotoFlow(defaultFlow)
+                        return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                     }
                 }
             }
@@ -140,8 +123,8 @@ module.exports = addKeyword(['1'])
             } else {
                 id_sede = ctx.body;
                 if (id_sede != '1' && id_sede != '2' && id_sede != '3') {
-                    await gotoFlow(defaultFlow)
-                    return fallBack()
+                    //await gotoFlow(defaultFlow)
+                    return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                 } else {
                     await state.update({ id_sede: ctx.body })
                     return null;
@@ -160,7 +143,7 @@ module.exports = addKeyword(['1'])
             const mensajeFinal = `*Para reservar una clase de prueba haz clic en el siguiente enlace:* 
         ${enlaceWhatsApp}`;
             // Enviar el mensaje utilizando tu función flowDynamic
-            await flowDynamic(mensajeFinal);
+            return flowDynamic(mensajeFinal);
         }
     )
 

@@ -24,8 +24,8 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
             } else {
                 sede = ctx.body;
                 if (sede != '1' && sede != '2' && sede != '3') {
-                    await gotoFlow(defaultFlow)
-                    return fallBack()
+                    //await gotoFlow(defaultFlow)
+                    return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
                 } else {
                     await state.update({ sede: ctx.body })
                     return null;
@@ -49,8 +49,8 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
             } else {
                 tipo_cliente = ctx.body;
                 if (tipo_cliente != '1' && tipo_cliente != '2') {
-                    await gotoFlow(defaultFlow)
-                    return fallBack()
+                    //await gotoFlow(defaultFlow)
+                    return fallBack('¡por favor ingresa una opcion valida! 🌟')
                 } else {
                     await state.update({ tipo_cliente: ctx.body })
                     return null;
