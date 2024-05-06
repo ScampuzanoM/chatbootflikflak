@@ -15,7 +15,7 @@ const mediaFlow = require("./media.flow");
  * Flujo de bienvenida
  */
 
-module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'holi', 'hol', 'oe'])
+module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'holi', 'hol', 'oe', 'buenos dias','buenos días','hello', 'hi' ])
     // module.exports =  addKeyword('BOT')
     .addAnswer('🙌 ¡Hola FlikFlaker! Bienvenid@ a un mundo lleno de piruetas con *Flik-Flak*. Soy tu asistente virtual, *FlikFlakBot*.')
     .addAnswer(
