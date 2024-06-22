@@ -15,6 +15,7 @@ const cliente_nuevoFlow = require('./flows/cliente_nuevo.flow');
 const media_flow =  require('./flows/media.flow');
 const pqrs = require('./flows/pqrs');
 const fiestaCumpleaños = require('./flows/fiesta_cumple');
+const vacacional = require('./flows/vacaciones.flow');
 /**
  * Configuracion de Plugin
  */
@@ -34,6 +35,7 @@ const main = async () => {
     cliente_actualFlow,
     cliente_nuevoFlow,
     pqrs,
+    vacacional,
     media_flow,
     fiestaCumpleaños
   ]);

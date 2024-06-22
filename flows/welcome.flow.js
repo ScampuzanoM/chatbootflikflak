@@ -7,6 +7,7 @@ const pqrs = require("./pqrs");
 const fiestaCumpleFlow = require("./fiesta_cumple")
 const inactividad = require("./inactividad.flow");
 const mediaFlow = require("./media.flow");
+const vacacionalFlow = require("./vacaciones.flow");
 
 
 /**
@@ -26,7 +27,8 @@ module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'ho
             '2. 👋 Nuevo FlikFlaker.',
             '3. 📋 Pólizas.',
             '4. 📪 PQRS',
-            '5. 🎊 Agenda tu fiesta de cumpleaños.'
+            '5. 🎊 Agenda tu fiesta de cumpleaños.',
+            '6. Vacaciones recreativas'
             ,
         ],
         { capture: true, idle: Number(process.env.TIEMPO_INACTIVIDAD) },
@@ -51,6 +53,9 @@ module.exports = addKeyword(['hola','hoola', 'ole', 'alo', 'buenas', 'menu', 'ho
                     }
                     case '5': {
                         return gotoFlow(fiestaCumpleFlow)
+                    }
+                    case '6': {
+                        return gotoFlow(vacacionalFlow)
                     }
                     case '_event_media': {
                         return gotoFlow(mediaFlow)

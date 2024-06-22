@@ -22,7 +22,7 @@ module.exports = addKeyword('USUARIOS_REGISTRADOS')
             if (ctx?.idleFallBack) {
                 return gotoFlow(inactividad)
             } else {
-                sede = ctx.body;
+               let  sede = ctx.body;
                 if (sede != '1' && sede != '2' && sede != '3') {
                     //await gotoFlow(defaultFlow)
                     return fallBack('🌟 ¡por favor ingresa una opcion valida! 🌟')
