@@ -1,7 +1,7 @@
 const pm2 = require('pm2');
 const os = require('os');
 
-const appName = 'app-name'; // Reemplaza con el nombre de tu aplicación en PM2
+const appName = 'app'; // Reemplaza con el nombre de tu aplicación en PM2
 const maxCpuUsage = 90; // Umbral de uso de CPU en porcentaje
 const checkInterval = 10000;  // Intervalo de verificación en milisegundos (5 segundos)
 const maxDuration = 180000; // Duración máxima en milisegundos para superar el umbral (3 minutos)
